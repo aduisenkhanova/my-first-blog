@@ -1,0 +1,70 @@
+aseld@DESKTOP-R9EN51L MINGW64 ~/django (master)
+$ git commit -m "Changed the HTML for the site."
+[master 1b2c21f] Changed the HTML for the site.
+ 4 files changed, 37 insertions(+), 22 deletions(-)
+ create mode 100644 blog/templates/blog/post_list.html
+ create mode 100644 blog/urls.py
+ rewrite mysite/urls.py (88%)
+
+aseld@DESKTOP-R9EN51L MINGW64 ~/django (master)
+$ git push
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (10/10), 1.27 KiB | 649.00 KiB/s, done.
+Total 10 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/aduisenkhanova/my-first-blog.git
+   ae20714..1b2c21f  master -> master
+                                                                                                              ^
+SyntaxError: EOL while scanning string literal)
+>>> thon manage.py shell
+Python 3.9.0 (tags/v3.9.0:9cf6752, Oct  5 2020, 15:34:40) [MSC v.1927 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> Post.objects.all()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Post' is not defined
+>>> from blog.models import Post
+>>> Post.object.all()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: type object 'Post' has no attribute 'object'
+>>> Post.objects.all()
+<QuerySet [<Post: Online School>, <Post: Hi>, <Post: Autumn>]>
+>>> Post.objects.create(author=me, title='SImple title;, text='Test')
+  File "<console>", line 1
+    Post.objects.create(author=me, title='SImple title;, text='Test')
+                                                               ^
+SyntaxError: invalid syntax
+>>> from django.contrib.auth.models import User
+>>> User.objects.all()
+  File "<console>", line 1
+=m  User.obkeets.all()
+                                  ^
+SyntaxError: invalid syntax
+>>> 'ser.objects.all()
+  File "<console>", line 1
+    'ser.obkecec.all()
+     ^                ^
+SyntaxError: EOL while scanning string literal
+>>> kd'r.objects.all()
+<QuerySet [<User: aseld>]>
+>>> me = User.objects.get(username='aseld')
+>>> Post.objects.create(authot=me, title='Sample title', text='Test')
+
+KeyboardInterrupt
+>>> Post.objects.create(author=me, title='Simple title', text='Test')
+<Post: Simple title>
+>>> Post.objects.all()
+<QuerySet [<Post: Online School>, <Post: Hi>, <Post: Autumn>, <Post: Simple title>]>
+>>> Post.objects.filter(author=me)
+  File "<console>", line 1
+    > Post.objects.filter(author=me)
+    ^
+SyntaxError: invalid syntax
+>>> Post.objects.filter(author=me)
+<QuerySet [<Post: Online School>, <Post: Hi>, <Post: Autumn>, <Post: Simple title>]>
+>>>
