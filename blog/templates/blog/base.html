@@ -12,6 +12,8 @@
       {% if user.is_authenticated %}
         <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
       {% endif %}
+      <a href="{% url 'register' %}" class="top-menu"><span>Регистрация</span></a>
+      <a href="{% url 'login' %}" class="top-menu"><span>Войти</span></a>
         <h1><a href="/">Assel's Blog</a></h1>
     </div>
     <div class="content container">
